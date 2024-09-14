@@ -26,7 +26,7 @@ document.getElementById('rollForm').addEventListener('submit', async function(ev
             // Show the link if valid
             document.getElementById('message').innerText = '';
             const linkContainer = document.getElementById('linkContainer');
-            linkContainer.innerHTML = `<a href="${validLink}" target="_blank">www.google.com</a>`;
+            linkContainer.innerHTML = `<a href="${validLink}" target="_blank">Click Here</a>`;
         } else {
             document.getElementById('message').innerText = 'Wrong Key';
             document.getElementById('linkContainer').innerHTML = ''; // Clear link if invalid
