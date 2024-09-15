@@ -75,6 +75,7 @@ button:hover {
 #linkContainer {
     margin-top: 20px;
     font-size: 16px;
+    word-wrap: break-word;
 }
 
 #linkContainer a {

@@ -15,14 +15,14 @@ async function fetchValidData() {
 document.getElementById('rollForm').addEventListener('submit', async function(event) {
     event.preventDefault(); // Prevent default form submission
 
-    const rollno = document.getElementById('rollno').value;
-    const input32 = document.getElementById('input32').value;
+    const rollno = document.getElementById('rollno').value.trim(); // Trim any whitespace
+    const input32 = document.getElementById('input32').value.trim(); // Trim any whitespace
 
     const { validRollNumbers, validLink } = await fetchValidData();
 
     // Validate inputs
     if (rollno && input32) {
-        if (validRollNumbers[rollno] === input32) {
+        if (validRollNumbers[rollno] === input32) { // Use strict equality check (===)
             // Show the link if valid
             document.getElementById('message').innerText = '';
             const linkContainer = document.getElementById('linkContainer');
@@ -36,3 +36,4 @@ document.getElementById('rollForm').addEventListener('submit', async function(ev
         document.getElementById('linkContainer').innerHTML = ''; // Clear link if fields are empty
     }
 });
+
